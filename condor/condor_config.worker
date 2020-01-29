@@ -1,0 +1,11 @@
+DAEMON_LIST = MASTER, STARTD
+DedicatedScheduler = "DedicatedScheduler@cad01-submit01.company.edu.co" 
+STARTD_EXPRS = $(STARTD_EXPRS), DedicatedScheduler
+START = True
+SUSPEND = False
+CONTINUE = True
+PREEMPT = False
+KILL = False
+WANT_SUSPEND = False
+WANT_VACATE = False
+RANK = Scheduler =?= $(DedicatedScheduler)

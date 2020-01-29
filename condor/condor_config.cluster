@@ -1,0 +1,37 @@
+## For more detial please see
+LOCAL_CONFIG_FILE = /nfs/condor/condor_config.$(HOSTNAME)
+# The following should be your cluster domain
+UID_DOMAIN = company.edu.co
+# Human readable name for your Condor pool
+COLLECTOR_NAME = "CAD 201803 at $(UID_DOMAIN)"
+# A shared file system (NFS), e.g. job dir, is assumed if the name is the same 
+FILESYSTEM_DOMAIN = $(UID_DOMAIN)
+ALLOW_WRITE = *.$(UID_DOMAIN)
+CONDOR_ADMIN = root@$(FULL_HOSTNAME)
+# The following should be the full name of the head node
+CONDOR_HOST = cad01-head01.company.edu.co
+# Port range should be opened in the firewall
+IN_HIGHPORT = 9999
+IN_LOWPORT = 9000
+# This is to enforce password authentication 
+SEC_DAEMON_AUTHENTICATION = required 
+SEC_DAEMON_AUTHENTICATION_METHODS = password 
+SEC_CLIENT_AUTHENTICATION_METHODS = password,fs,gsi 
+SEC_PASSWORD_FILE = /var/lib/condor/condor_credential 
+ALLOW_DAEMON = condor_pool@*
+ALLOW_CONFIG = condor@company.edu.co/$(CONDOR_HOST)
+## Sets how often the condor_negotiator starts a negotiation cycle
+## for negotiator and schedd).
+# It is defined in seconds and defaults to 60 (1 minute), default is 300. 
+NEGOTIATOR_INTERVAL = 20
+## Scheduling parameters for the startd
+TRUST_UID_DOMAIN = TRUE
+# start as available and do not suspend, preempt or kill
+START = TRUE
+SUSPEND = FALSE
+PREEMPT = FALSE
+KILL = FALSE ENABLE_RUNTIME_CONFIG = True 
+ENABLE_PERSISTENT_CONFIG = True 
+PERSISTENT_CONFIG_DIR = /nfs/condor/ 
+SETTABLE_ATTRS_CONFIG = * 
+SETTABLE_ATTRS_ADMINISTRATOR = *
