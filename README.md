@@ -3,7 +3,7 @@ HT Condor cluster configuration using Lammps (https://lammps.sandia.gov/) with M
 
 # Instalación y Configuración del Cluster
 
-En esta sesión, se presentan los comandos usados y la descripción detallada de los pasos necesarios para la instalación y configuración del cluster.
+En esta seccion, se presentan los comandos usados y la descripción detallada de los pasos necesarios para la instalación y configuración del cluster.
 
 ## Configuración de direccionamientos, nombres y red
 
